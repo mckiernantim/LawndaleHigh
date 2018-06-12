@@ -1,0 +1,33 @@
+<%= form_for [@instructor] do |f| %>
+<div>
+        <%= f.label :f_name %>
+        <%= f.text_field :f_name %>
+    </div>
+
+    <div>
+        <%= f.label :l_name %>
+        <%= f.text_field :l_name%>
+    </div>
+
+    <div>
+        <%= f.label :Date_of_birth %>
+        <%= f.date_field :age %>
+        
+    </div>
+    <div>
+        <%= f.label :salary %>
+        <%= f.number_field :salary%>
+        
+    </div>
+    <div>
+        <%= f.label :Education_credentials%>
+        <%= f.text_field :education %>
+        
+    </div>
+    <div>   
+        <%= f.submit %>
+    </div>
+
+<% end %>
+   
+    

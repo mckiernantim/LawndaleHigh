@@ -1,0 +1,27 @@
+<%= form_for [@student, @student_cohort] do |f| %>
+    Current Classes:
+    <% @classes.each do |thisClass| %>
+    <div>
+        Class Name: <%=thisClass.cohort.name%>
+    </div>
+    <%end%>
+
+    <div>
+        <select name="cohortSelect">
+                <% @cohorts.each do |cohort| %>
+                    <option value="<%= cohort.id %>"><%= cohort.name %></option>
+                <% end %>
+            </select>
+    </div>
+ 
+  
+        <%= f.hidden_field :student_id, value: params[:student_id] %>
+       
+    
+
+        
+    <div>   
+        <%= f.submit %>
+    </div>
+
+<% end %>

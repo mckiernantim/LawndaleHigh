@@ -1,0 +1,18 @@
+<H1> <%=@instructor.f_name%> <%=@instructor.l_name%></h1>
+<div>
+    Birth Year: <%=@instructor.age%>
+</div> 
+<div>
+    Education Credentials:
+        <%=@instructor.education%>
+</div>
+<div>
+    Salary: <%=@instructor.salary%>
+</div>
+<div>
+    Added to LawndaleNet: <%=@instructor.created_at%>
+</div>
+
+<%= link_to 'Home', instructors_path()  %>
+<%= link_to 'edit', edit_instructor_path(@instructor)%>
+

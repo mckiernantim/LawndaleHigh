@@ -1,0 +1,26 @@
+<div> <h1>Welcome to your courses panel.  LawndaleWeb
+ currently has the following courses available to students</h1>
+ </div>
+
+ <h4> <a href = '<%=new_course_path %>'> Add New Course</a></h4>
+<%= link_to 'Add New Course', new_course_path %>
+<%@courses.each do |course| %>
+
+    <div>
+        First Name: <%= course.name %>
+    </div>
+
+    <div>
+        Credit Hours: <%=course.hours %>
+    </div> 
+       <h4> <a href = <%= new_course_cohort_path(course)%>>Create New Cohort</a></h4>
+    <div>
+		
+		<%= link_to 'View', course_path(course)  %>
+		<%= link_to 'Edit', edit_course_path(course)%>
+		<%= link_to 'delete', course_path(course), 'data-method': "DELETE", 'data': { confirm: 'Confrim deletion from LawndaleWeb.  Data cannot be recovered.' }%>
+       
+    <br> 
+    </br>
+        
+<% end %>

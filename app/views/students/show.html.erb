@@ -1,0 +1,23 @@
+<H1> <%=@student.f_name%> <%=@student.l_name%></h1>
+<div>
+    Birth Year: <%=@student.age%>
+</div> 
+<div>
+    Final Completed Grade Level:
+        <%=@student.highes_grade%>
+</div>
+
+<div>
+    Added to LawndaleNet: <%=@student.created_at%>
+</div>
+<div>Current Classes:
+ <% @classes.each do |thisClass| %>
+    <div>
+        Class Name: <%=thisClass.cohort.name%>
+    </div>
+    <%end%>
+</div>
+
+<%= link_to 'Home', students_path()  %>
+<%= link_to 'edit', edit_student_path(@student)%>
+
