@@ -1,0 +1,15 @@
+<%= form_for @course do |f| %>
+	<div>
+	
+    	<%= f.label :Course_name %>
+		<%= f.text_field :name %>
+	</div>
+    <div>
+        <%= f.label :Credit_hours %>
+        <%= f.number_field :hours%>
+    </div>
+    
+    <div>
+        <%= f.submit %>
+	</div>	
+<% end %>

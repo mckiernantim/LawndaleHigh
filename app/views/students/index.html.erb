@@ -1,0 +1,40 @@
+<H1> Welcome to the Students panel. LawndaleWeb
+ currently has the following students enrolled</h1>
+
+ <h4> <a href = '<%=new_student_path %>'> Add New Student</a></h4>
+<%= link_to 'Add New Student', new_student_path %>
+<%@students.each do |student| %>
+
+    <div>
+        Last Name: <%=student.l_name %>
+    </div>
+
+    <div>
+        First Name: <%=student.f_name %>
+    </div>
+        Current Cohorts:
+    </div>
+    <div>
+        Date Of Birth: <%=student.age%>
+    </div>
+    <div>
+        Current Classes: 
+    </div>
+     </div> 
+       <h4> <a href = <%= new_student_students_cohort_path(student)%>>Manage Student Schedule</a></h4>
+    <div>
+		
+
+    <div>
+        Added to LawndaleWeb: <%=student.created_at%>
+
+    <div>
+		
+		<%= link_to 'View', student_path(student)  %>
+		<%= link_to 'Edit', edit_student_path(student)%>
+		<%= link_to 'delete', student_path(student), 'data-method': "DELETE", 'data': { confirm: 'Confrim deletion from LawndaleWeb.  Data cannot be recovered.' }%>
+       
+    <br> 
+    </br>
+        
+<% end %>

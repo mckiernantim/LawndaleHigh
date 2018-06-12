@@ -1,0 +1,17 @@
+<H1> <%=@course.name%> </h1>
+<div>
+    Credit Hours: <%= @course.hours%> 
+</div> 
+<div>
+    Current Cohorts:
+</div>
+<div>
+    Current Instructors:
+</div>
+<div>
+    Current Students:
+</div>
+
+<%= link_to 'Home', courses_path()  %>
+<%= link_to 'Edit', edit_course_path(@course)%>
+

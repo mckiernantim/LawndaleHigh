@@ -1,0 +1,31 @@
+<%= form_for @student do |f| %>
+	<div> 
+		<%= f.label :first_name %>
+		<%= f.text_field :f_name %>
+	</div>
+
+	<div>
+	    <%= f.label :last_Name %>
+		<%= f.text_field :l_name %>
+	</div>
+    <div>
+	    <%= f.label :Date_of_birth %>
+		<%= f.date_field :age %>
+    </div>
+    <div>
+        <%= f.label :Last_grade_completed%>
+        <%= f.number_field :highes_grade%>
+    </div>
+	<div>
+		Courses: <%=f.label :current_cohorts%>
+	</div>
+	
+  
+         <%= f.submit %>
+
+	 <div>
+		Add <%=@student.f_name, @student.l_name %> To Class
+	</div>
+		  <%= f.hidden_field :student_id, value: params[:student_id] %>
+	</div>	
+<% end %>
