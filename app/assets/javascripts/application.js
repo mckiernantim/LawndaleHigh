@@ -9,7 +9,12 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require rails-ujs
+//= require jquery/dist/jquery
+//= require axios/dist/axios
+
+//= require toastr/build/toastr.min.js
+
 //= require_tree .
+
 

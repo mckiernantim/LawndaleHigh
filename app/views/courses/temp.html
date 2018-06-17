@@ -1,0 +1,43 @@
+<H1> Welcome to your instructor panel</H1>
+
+<h4>
+    <a href='<%=new_instructor_path %>'> Add New Instructor</a>
+</h4>
+<%= link_to 'Add New Instructor', new_instructor_path %>
+    <%@instructors.each do |instructor| %>
+        <div class="instructor">
+            <div>
+                First Name:
+                <%= instructor.f_name %>
+            </div>
+
+            <div>
+                Last Name:
+                <%= instructor.l_name%>
+            </div>
+            <div>
+                Date of Birth:
+                <%=instructor.age%>
+
+            </div>
+            Salary:
+            <%=instructor.salary%>
+                <div>
+
+                </div>
+                Education:
+                <%=instructor.education%>
+                    <div>
+                        Current Cohorts:
+                    </div>
+                    <div>
+
+                        <%= link_to 'View', instructor_path(instructor)  %>
+                            <%= link_to 'edit', edit_instructor_path(instructor)%>
+                                <%= link_to 'Delete', instructor,  class: "delete-instructor", 'data': {  confirm: 'Confrim deletion from LawndaleWeb.  Data cannot be recovered.' }%>
+                    </div>
+                                    <br>
+                                    </br>
+    </div>
+
+                    <% end %>

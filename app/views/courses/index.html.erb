@@ -1,26 +1,104 @@
-<div> <h1>Welcome to your courses panel.  LawndaleWeb
- currently has the following courses available to students</h1>
- </div>
+<div class='container'>
+    <div class='row big-row justify-content-center'>
+      <div class='col-12 align'>
+        <div class='row middle-row'>
+          <div class='col-12'>
+            <div class='row inner-row'>
+              <div class='col-8 page-header'>
+                <div class='row inner-inner-row'>
+                  <div class=" row inner-inner-inner-row">
+                    <div class='col-12 page-headline'>
+                      <h2>Welcome to your courses panel. </h2>
+                      <h3>LawndaleWeb currently has the following courses available to students</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="row inner-inner-inner-row">
+                  <div class='col-12 page-controls'>
+                    <h4>
+                      <a href='<%=new_course_path %>'> Add New Course </a>
+                    </h4>
+                    <div>
+                      <%= link_to 'Add New Course', new_course_path %>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
- <h4> <a href = '<%=new_course_path %>'> Add New Course</a></h4>
-<%= link_to 'Add New Course', new_course_path %>
-<%@courses.each do |course| %>
 
-    <div>
-        First Name: <%= course.name %>
-    </div>
 
-    <div>
-        Credit Hours: <%=course.hours %>
-    </div> 
-       <h4> <a href = <%= new_course_cohort_path(course)%>>Create New Cohort</a></h4>
-    <div>
-		
-		<%= link_to 'View', course_path(course)  %>
-		<%= link_to 'Edit', edit_course_path(course)%>
-		<%= link_to 'delete', course_path(course), 'data-method': "DELETE", 'data': { confirm: 'Confrim deletion from LawndaleWeb.  Data cannot be recovered.' }%>
-       
-    <br> 
-    </br>
+              <div class='row inner-inner-row'>
+                <div class='col-12 page-image'>
+                  <p> Course image here</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class='row middle-row'>
+          <div class='col-12'>
+             <div class="row bottom-row">
+                  <%@courses.each_with_index do |course, index| %>
+                <div class="course col">
+                  <div class >
+                  Course Name:
+                  <%= course.name %>
+                </div>
+                <div>
+                  <ul>
+                    <li>
+                      Credit Hours:
+                      <%=course.hours %>
+                    </li>
+                    <li>
+                      Number of Cohorts for <%=course.name%>: <%=course.cohorts.length%>
+  
+                      </li>
+                      
+                    <% course.cohorts.each do |cohort| %>
+                    <li>
+                    
+                        Cohort ID:
+                        <%= cohort.id %>
+                      </li>
+                      <li>
+                        Instructor
+                        <%= cohort.instructors.first && cohort.instructors.first.l_name %>
+                      </li>
+                      <% end %>
+                  </ul>
+                </div>
+                <div>
+                  <h4>
+                    <a href=<%=new_course_cohort_path(course)%>>Create New Cohort for
+                      <%=course.name%>
+                    </a>
+                  </h4>
+                </div>
+                <div>
+                  <%= link_to 'View', course_path(course)  %>
+                    <%= link_to 'Edit', edit_course_path(course)%>
+                      <%= link_to 'Delete', course,  class: "deleteCourse"%>
+                </div>
+                </div>
+                 
+                 
+          <% if index.even? %>
+            <div class="w-100"></div>
+            <%end%>
+            <%end%>
+              
+          
+          
+          </div>
+          </div>
+        </div>
         
-<% end %>
+      </div>
+    </div>
+  
+    
+  </div>
+  
+  

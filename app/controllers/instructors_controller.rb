@@ -1,4 +1,6 @@
 class InstructorsController < ApplicationController
+	before_action :authenticate_user!
+	skip_before_action :verify_authenticity_token, only: [:destroy]
     def index
 		@instructors = Instructor.all.order(:created_at)
 	end
@@ -15,7 +17,7 @@ class InstructorsController < ApplicationController
 	def create
 		# the below will do the following
 		# Instructors.create({name: '...', description: '...'})
-		flash[:success] = "YOU GOT A TODO MADE BRUH"
+		
 		Instructor.create(instructor_params)
 
 		redirect_to instructors_path
@@ -35,8 +37,7 @@ class InstructorsController < ApplicationController
 
 	def destroy
 		Instructor.destroy(params[:id])
-
-		redirect_to instructors_path
+		render json: {status: 'success', message: 'Instructor record destroyed'}
 	end
 
 	private
