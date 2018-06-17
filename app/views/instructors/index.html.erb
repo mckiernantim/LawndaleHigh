@@ -19,7 +19,7 @@
                                     </h4>
                                 </div>
                             </div>
-                            <%= link_to 'Add New Instructor', new_instructor_path %>
+                            
                         </div>
                         <div class='col-md-4 page-image'>
                             <p> INSTRUCTOR image here</p>
@@ -27,7 +27,11 @@
                     </div>
                 </div>
             </div>
-    
+
+        <div class ="banner instructor-banner" >
+
+
+        </div>
     
     
     
@@ -42,14 +46,14 @@
                                 <div class="row">
                                     <div class='col-md-8'>
                                         <div class="instructor_stat col-12">
-                                                <h5>
+                                                <h4 class = 'card_headline'>
                                                     Last Name:
                                                     <%= instructor.l_name %>
                                                 </h5>
                                             </div>
     
                                             <div class="instructor_stat col-12">
-                                                <h5>
+                                                <h4 class = 'card_headline'>
                                                     First Name:
                                                     <%= instructor.f_name%>
                                                 </h5>
@@ -82,7 +86,7 @@
                                 <div class="instructor_controls">
     
                                     <%= link_to 'View', instructor_path(instructor)  %>
-                                        <%= link_to 'edit', edit_instructor_path(instructor)%>
+                                        <%= link_to 'Edit', edit_instructor_path(instructor)%>
                                             <%= link_to 'Delete', instructor,  class: "deleteInstructor"%>
                                 </div>
     

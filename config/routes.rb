@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/', to: 'users/sessions#new'
   end
+
    
       
 
