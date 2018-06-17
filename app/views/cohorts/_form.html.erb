@@ -14,11 +14,10 @@
     </div>
     
      <div>
-             
-             <select name="instructorSelect">
-                <% Instructor.all.each do |instructor| %>
-                    <option value="<%= instructor.id %>"><%= instructor.l_name %></option>
-                <% end %>
+        <select name="instructorSelect">
+             <% Instructor.all.each do |instructor| %>
+                 <option value="<%= instructor.id %>"><%= instructor.l_name %></option>
+             <% end %>
 
             </select>
     </div>

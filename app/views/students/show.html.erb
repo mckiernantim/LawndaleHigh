@@ -11,11 +11,27 @@
     Added to LawndaleNet: <%=@student.created_at%>
 </div>
 <div>Current Classes:
- <% @classes.each do |thisClass| %>
-    <div>
-        Class Name: <%=thisClass.cohort.name%>
-    </div>
-    <%end%>
+<ul>
+ <% @cohort.each do |thisClass| %>
+    
+        <li>
+            Class Name: <%=thisClass.name%>
+        </li>
+        <li>
+            Class ID: <%=thisClass.id%>
+        </li>
+         <li>
+            
+            <% thisClass.instructors.where('cohort_id = ?', thisClass.id).each do |instructor| %>
+            Instructor: <%=instructor.l_name%>
+           
+            <%end%>
+         </li>
+          <br>
+         </br>
+        
+        <%end%>
+    </ul>
 </div>
 
 <%= link_to 'Home', students_path()  %>

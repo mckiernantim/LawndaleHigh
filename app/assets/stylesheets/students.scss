@@ -1,3 +1,93 @@
 // Place all the styles related to the students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$yellow: #ecbe2a;
+
+$yellow-gradient:  linear-gradient(#dbc54d, #ecbe2a);
+
+body {
+    background: linear-gradient(#277ca9, #1f8cbe)
+};
+.container{
+    background: white;
+    color: white;
+    text-shadow: #07506f -2px 2px 2px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+  
+    border: solid 2px;
+    border-color: #ecbe2a;
+}
+
+.nav {
+    background: linear-gradient(#dbc54d, #ecbe2a);
+    text-shadow: #1883b1 0px 1px 2px;
+    -webkit-font-smoothing: antialiased;
+    color: white !important;
+    
+};
+
+.student col {
+    border: 1px solid;
+    border-color: #ecbe2a;
+  
+    background: linear-gradient(#277ca9, #1f8cbe)
+};
+.page-image{
+    background: white;
+    border:     1px solid;
+    border-color: #ecbe2a;
+}
+.page-header{
+
+
+border: 1px solid;
+border-color: #ecbe2a;
+border-radius: 3px;
+padding: 0;
+background: linear-gradient(#277ca9, #1f8cbe)
+}
+.big-row{
+    padding: 5%;
+    background-image: url(/images/Dariacast.jpg)
+}
+.middle-row{
+    
+border: 1px solid;
+border-color: #ecbe2a;
+border-radius: 3px;
+padding: 0;
+background: linear-gradient(#277ca9, #1f8cbe)
+}
+
+.inner-inner-row {
+    
+ 
+
+}
+.inner-inner-inner-row {
+    margin: 1%
+    
+ 
+
+}
+
+.student{
+    border: 2px solid;
+    border-color: #ecbe2a
+}
+.inner-row{
+    
+    border-color: #ecbe2a;
+    padding: 0;
+
+}
+.student_pic{
+
+    background: white;
+    border-left: 2px solid;
+    border-bottom:  2px solid;
+    border-color: #ecbe2a
+   
+}
+

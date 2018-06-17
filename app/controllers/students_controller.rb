@@ -1,22 +1,29 @@
 class StudentsController < ApplicationController
+	before_action :authenticate_user!
+	skip_before_action :verify_authenticity_token, only: [:destroy]
+	# before_action :authenticate_user!
+	# skip_before_action :verify_authenticity_token, only: [:destroy]
     def index
 		@students = Student.all.order(:created_at)
+		@cohorts = Cohort.all
+		
 	end
 
 	def show
-		
+	
 		@student = Student.find(params[:id])
-		@classes = StudentsCohort.where("student_id = ?", params[:id])
+		@cohort = @student.cohorts
 	end
 
 	def new
 		@student = Student.new
+		
 	end
 
 	def create
 		# the below will do the following
 		# Student.create({name: '...', description: '...'})
-		flash[:success] = "YOU GOT A student MADE BRUH"
+		
 		Student.create(student_params)
 		
 
@@ -37,7 +44,7 @@ class StudentsController < ApplicationController
 	def destroy
 		Student.destroy(params[:id])
 
-		redirect_to students_path
+		render json: {status: 'success', message: 'student record destroyed'}
 	end
 
 	private

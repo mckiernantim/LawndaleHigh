@@ -1,5 +1,18 @@
 {
   "name": "LawndaleHigh",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.18.0",
+    "boostrap": "^2.0.0",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "toastr": "^2.1.4"
+  },
+  "version": "1",
+  "description": "for pamelas panel project",
+  "main": "index.js",
+  "repository": "https://github.com/mckiernantim/LawndaleHigh",
+  "author": "mckiernantim",
+  "license": "mit"
 }

@@ -1,40 +1,124 @@
-<H1> Welcome to the Students panel. LawndaleWeb
- currently has the following students enrolled</h1>
 
- <h4> <a href = '<%=new_student_path %>'> Add New Student</a></h4>
-<%= link_to 'Add New Student', new_student_path %>
-<%@students.each do |student| %>
-
-    <div>
-        Last Name: <%=student.l_name %>
-    </div>
-
-    <div>
-        First Name: <%=student.f_name %>
-    </div>
-        Current Cohorts:
-    </div>
-    <div>
-        Date Of Birth: <%=student.age%>
-    </div>
-    <div>
-        Current Classes: 
-    </div>
-     </div> 
-       <h4> <a href = <%= new_student_students_cohort_path(student)%>>Manage Student Schedule</a></h4>
-    <div>
-		
-
-    <div>
-        Added to LawndaleWeb: <%=student.created_at%>
-
-    <div>
-		
-		<%= link_to 'View', student_path(student)  %>
-		<%= link_to 'Edit', edit_student_path(student)%>
-		<%= link_to 'delete', student_path(student), 'data-method': "DELETE", 'data': { confirm: 'Confrim deletion from LawndaleWeb.  Data cannot be recovered.' }%>
-       
-    <br> 
-    </br>
-        
-<% end %>
+        <div class='row big-row justify-content-center'>
+                <div class='col-md-12 align'>
+                  <div class='row middle-row'>
+                    <div class='col-md-12'>
+                      <div class='row inner-row' align= "center">
+                        <div class='col-md-8 page-header'>
+                          <div class='row inner-inner-row'>
+                            <div class=" row inner-inner-inner-row">
+                              <div class='col-md-12 page-headline' align = "center">
+                                <h2> Welcome to the Students panel. </h2>
+                                <h3> LawndaleWeb has the following Students enrolled </h3>
+                              </div>
+                            </div>
+                          </div>
+                            <div class="row inner-inner-inner-row">
+                              <div class='col-md-12 page-controls'>
+                                <h4>
+                                  <a href='<%=new_student_path %>'> Add New Student</a>
+                                </h4>
+                                <div>
+                                  <%= link_to 'Add New Student', new_student_path %>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          
+            
+                        </div>
+                        
+                          <div class='col-md-4 page-image'>
+                            <p> LAWNDALE image here</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='row middle-row'>
+                    <div class='col-md-12'>
+                    <div class = 'row'>
+                      <%@students.each_with_index do |student, index| %>
+                      <div class="student col" id="<%=student.id%>" align = "left">
+                        <div class = "row">
+                          <div class = 'col-md-8'>
+                        <div class="deleteStudent">
+                        <h5>
+                          Last Name:
+                          <%=student.l_name %>
+                          </h5>
+                        </div>
+                        <div>
+                        <h5>
+                          First Name:
+                          <%=student.f_name %>
+                          </h5>
+                        </div>
+                        </div>
+                        
+                        <div class = 'col-md-4 student_pic' align ="right" >
+                        STUDENT PIC HERE
+                        </div>
+                        </div>
+      
+                        <br>
+                        <div align = 'left'>
+                          Date Of Birth:
+                          <%=student.age%>
+                        </div>
+                        <div align ="left">
+                          Current Classes:
+                          <ul>
+                            <% student.cohorts.each do |cohort|%>
+                              <li>
+                                Course Name:
+                                <%= cohort.name %>
+                              </li>
+                              <li>
+                                Cohort ID:
+                                <%= cohort.id%>
+                              </li>
+                              <li>
+                                Instructor:
+                                <%=cohort.instructors.first.try(:l_name)%>,
+                                  <%=cohort.instructors.first.try(:f_name)%>
+                              </li>
+            
+                              <%end%>
+                          </ul>
+                        </div>
+                        <div align = "left">
+                        <h4>
+                          <a href= <%=new_student_students_cohort_path(student)%>> Manage Schedule for
+                            <%=student.l_name%>,
+                              <%=student.f_name%>
+                          </a>
+                        </h4>
+                        </div>
+                        <div>
+                          Added to LawndaleWeb:
+                          <%=student.created_at%>
+                            <div>
+                              <%= link_to 'View', student_path(student)  %>
+                                <%= link_to 'Edit', edit_student_path(student)%>
+                                  <%= link_to 'Delete', student,  class: "deleteStudent"%>
+                            </div>
+                        
+                        </div>
+                        
+                      </div>
+                          <% if index.even? %>
+                      
+                        <div class="w-100"></div>
+                       
+                        
+                      <% end %> 
+                      
+                      <%end%>
+               
+                     </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>

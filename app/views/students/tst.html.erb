@@ -1,0 +1,87 @@
+<div class='container'>
+        <div class='row big-row justify-content-center'>
+          <div class='col12 align'>
+            <div class='row middle-row'>
+              <div class='col-12'>
+                <div class='row inner-row'>
+                  <div class='col-8 page-header'>
+                    <div class='row inner-inner-row'>
+                      <div class=" row inner-inner-inner-row">
+                        <div class='col-12 page-headline'>
+                          <h2> Welcome to the Instructors panel. </h2>
+                          <h3> LawndaleWeb has the following instructor enrolled </h3>
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row inner-inner-inner-row">
+                        <div class='col-12 page-controls'>
+                          <h4>
+                            <a href='<%=new_student_path %>'> Add New instructor</a>
+                          </h4>
+                          <div>
+                            <%= link_to 'Add New instructor', new_instructor_path %>
+                              <%@instructor.each do |instructor| %>
+                          </div>
+                        </div>
+                      </div>
+                    
+      
+                  </div>
+                  <div class='row inner-inner-row'>
+                    <div class='col-12 page-image'>
+                      <p> instructor image here</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row middle-row'>
+              <div class='col-12'>
+                <%@courses.each do |course| %>
+                        <div class="">
+                          <div class="course">
+                            Course Name:
+                            <%= course.name %>
+                          </div>
+                          <div>
+                            <ul>
+                              <li>
+                                Credit Hours:
+                                <%=course.hours %>
+                              </li>
+                              <% course.cohorts.each do |cohort| %>
+                                <li>
+                                  Cohort ID:
+                                  <%= cohort.id %>
+                                </li>
+                                <li>
+                                  Instructor
+                                  <%= cohort.instructors.first && cohort.instructors.first.l_name %>
+                                </li>
+                        <%end%>
+                    </ul>
+                  </div>
+                  <div>
+                  <h4>
+                    <a href=< %=new_instructor_Instructors_cohort_path(instructor)%>> Manage Schedule for
+                      <%=instructor.l_name%>,
+                        <%=instructor.f_name%>
+                    </a>
+                  </h4>
+                  </div>
+                  <div>
+                    Added to LawndaleWeb:
+                    <%=instructor.created_at%>
+                      <div>
+                        <%= link_to 'View', instructor_path(instructor)  %>
+                          <%= link_to 'Edit', edit_instructor_path(instructor)%>
+                            <%= link_to 'Delete', instructor,  class: "deleteinstructor"%>
+                      </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>

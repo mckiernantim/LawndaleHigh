@@ -3,13 +3,33 @@
     Credit Hours: <%= @course.hours%> 
 </div> 
 <div>
-    Current Cohorts:
+    Current Cohorts: <% @course.cohorts.each do |cohort|%>
+            <div>
+                <%=cohort.name%>
+            </div>
+            <%end%>
+            
 </div>
 <div>
-    Current Instructors:
+           
+    <div>
+    Current Instructors:  <% @course.cohorts.each do |cohort|%>
+    <%cohort.instructors.each do |instructor|%>
+        <div>
+                <%=instructor.l_name%>
+         </div>
+            <%end%>
+            <%end%>
 </div>
 <div>
-    Current Students:
+    Current Students: <% @course.cohorts.each do |cohort|%> 
+    <%cohort.students.each do |student|%>
+    <div>
+        <%=student.l_name%> , <%=student.f_name%>
+        <%end%>
+        <%end%>
+    </div>
+
 </div>
 
 <%= link_to 'Home', courses_path()  %>
