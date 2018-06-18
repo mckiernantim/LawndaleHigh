@@ -1,16 +1,28 @@
-
 <%= form_for @course do |f| %>
-	<div>
-	
-    	<%= f.label :Course_name %>
-		<%= f.text_field :name %>
-	</div>
-    <div>
-        <%= f.label :Credit_hours %>
-        <%= f.number_field :hours%>
+
+    <div class="middle-row">
+        <div class="row inner-row" align="center">
+
+            <div class="col-md-12">
+                <h5 class="card_headline">
+                    Create A New Course
+                </h5>
+                <h5 class="card_headline">
+
+
+                    <%= f.label :Course_name %>
+                        <%= f.text_field :name %>
+                </h5>
+                <h5 class="card_headline">
+                    <%= f.label :Credit_hours %>
+                        <%= f.number_field :hours%>
+                </h5>
+
+                <div>
+                    <%= f.submit %>
+                </div>
+
+            </div>
+        </div>
     </div>
-    
-    <div>
-        <%= f.submit %>
-	</div>	
-<% end %>
+    <% end %>

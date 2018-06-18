@@ -5,7 +5,7 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
@@ -22,6 +22,21 @@
 body{
     font-family: 'Graduate', cursive;
 }
+.container{
+    background: white;
+    color: white;
+    text-shadow: #07506f -2px 2px 2px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+  
+    border: solid 2px;
+    border-color: #ecbe2a;
+}
+.big-row{
+    padding: 5%;
+ 
+}
+
 a{
     color:  #ecbe2a
 };
@@ -54,3 +69,12 @@ a:hover {
     border-color: #ecbe2a
 }
  
+.middle-row{
+    
+    border: 1px solid;
+    border-color: #ecbe2a;
+    border-radius: 3px;
+    padding: 0;
+    background: linear-gradient(#277ca9, #1f8cbe)
+    }
+    
