@@ -53,11 +53,7 @@ padding: 0;
 background: linear-gradient(#277ca9, #1f8cbe)
 }
 
-.inner-inner-row {
-    
- 
 
-}
 .inner-inner-inner-row {
     margin: 1%
     
@@ -84,3 +80,10 @@ background: linear-gradient(#277ca9, #1f8cbe)
    
 }
 
+.students-image{
+    background-image: image-url('Cast.jpg');
+    height: auto; 
+    width: auto; 
+    background-size:cover;
+
+}
