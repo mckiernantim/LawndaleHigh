@@ -18,10 +18,7 @@
                                 <h4>
                                   <a href='<%=new_student_path %>'> Add New Student</a>
                                 </h4>
-                                <div>
-                                  <%= link_to 'Add New Student', new_student_path %>
-                                  
-                                </div>
+                              
                               </div>
                             </div>
                           
@@ -43,13 +40,13 @@
                         <div class = "row">
                           <div class = 'col-md-8'>
                         <div class="deleteStudent">
-                        <h5>
+                        <h4 class = "card_headline">
                           Last Name:
                           <%=student.l_name %>
                           </h5>
                         </div>
                         <div>
-                        <h5>
+                        <h4 class = "card_headline">
                           First Name:
                           <%=student.f_name %>
                           </h5>
@@ -88,7 +85,7 @@
                           </ul>
                         </div>
                         <div align = "left">
-                        <h4>
+                        <h4 class = "card_border">
                           <a href= <%=new_student_students_cohort_path(student)%>> Manage Schedule for
                             <%=student.l_name%>,
                               <%=student.f_name%>

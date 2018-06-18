@@ -1,4 +1,5 @@
 <%= form_for [@course, @cohort] do |f| %>
+
  New Cohort for <%=@course.name%>
      </div>
 
@@ -30,6 +31,7 @@
         
     <div>   
         <%= f.submit %>
+    </div>
     </div>
 
 <% end %>

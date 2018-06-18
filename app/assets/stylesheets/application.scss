@@ -18,9 +18,39 @@
 @import 'students';
 @import 'instructors';
 @import 'courses';
+@import url(https://fonts.googleapis.com/css?family=Graduate);
+body{
+    font-family: 'Graduate', cursive;
+}
+a{
+    color:  #ecbe2a
+};
+a:hover {
+    color: white;
+}
 
 
+.nav {
+    background: linear-gradient(#dbc54d, #ecbe2a);
+    text-shadow: #1883b1 0px 1px 2px;
+    -webkit-font-smoothing: antialiased;
+    color:#1f8cbe !important;
+    
+};
+.nav a{
+    color: #1f8cbe 
 
+}
+.nav a:hover{
+    color:white;
+}
 
- 
+.card_headline{
+
+   color: #ecbe2a;
+}
+.card_border{
+    border-top: 2px solid;
+    border-color: #ecbe2a
+}
  

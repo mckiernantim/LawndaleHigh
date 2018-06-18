@@ -1,107 +1,101 @@
-<div class='row big-row justify-content-center'>
+<div class='container'>
+    <div class='row big-row justify-content-center'>
         <div class='col-md-12 align'>
             <div class='row middle-row'>
                 <div class='col-md-12'>
-                    <div class='row inner-row' align="center">
+                    <div class='row inner-row'>
                         <div class='col-md-8 page-header'>
                             <div class='row inner-inner-row'>
                                 <div class=" row inner-inner-inner-row">
-                                    <div class='col-md-12 page-headline' align="center">
-                                        <h2> Welcome to the Instructors panel. </h2>
-                                        <h3> LawndaleWeb has the following Instructors currently on staff</h3>
+                                    <div class='col-md-12 page-headline'>
+                                        <h2>Welcome to your courses panel. </h2>
+                                        <h3>LawndaleWeb currently has the following courses available to students</h3>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="row inner-inner-inner-row">
+                                    <div class='col-md-12 page-controls'>
+                                        <h4>
+                                            <a href='<%=new_course_path %>'> Add New Course </a>
+                                        </h4>
+                                        <div>
+                                            <%= link_to 'Add New Course', new_course_path %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row inner-inner-inner-row">
-                                <div class='col-md-12 page-controls'>
-                                    <h4>
-                                        <a href='<%=new_instructor_path %>'> Add New Instructor</a>
-                                    </h4>
+                            <div class='col-md-4 page-image'>
+                                    <p> Course image here</p>
                                 </div>
                             </div>
-                            <%= link_to 'Add New Instructor', new_instructor_path %>
                         </div>
-                        <div class='col-md-4 page-image'>
-                            <p> INSTRUCTOR image here</p>
+                    </div>
+                </div>
+                <div class='col-md-12 align'>
+                <div class='row middle-row'>
+                    <div class='col-md-12'>
+                        <div class="row bottom-row">
+                            <%@courses.each_with_index do |course, index| %>
+                                <div class="course col">
+                                    <div class>
+                                        Course Name:
+                                        <%= course.name %>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                Credit Hours:
+                                                <%=course.hours %>
+                                            </li>
+                                            <li>
+                                                Number of Cohorts for
+                                                <%=course.name%>:
+                                                    <%=course.cohorts.length%>
+
+                                            </li>
+
+                                            <% course.cohorts.each do |cohort| %>
+                                                <li>
+
+                                                    Cohort ID:
+                                                    <%= cohort.id %>
+                                                </li>
+                                                <li>
+                                                    Instructor
+                                                    <%= cohort.instructors.first && cohort.instructors.first.l_name %>
+                                                </li>
+                                                <% end %>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4>
+                                            <a href=<%=new_course_cohort_path(course)%>>Create New Cohort for
+                                                <%=course.name%>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div>
+                                        <%= link_to 'View', course_path(course)  %>
+                                            <%= link_to 'Edit', edit_course_path(course)%>
+                                                <%= link_to 'Delete', course,  class: "deleteCourse"%>
+                                    </div>
+                                </div>
+
+
+                                <% if index.even? %>
+                                    <div class="w-100"></div>
+                                    <%end%>
+                                        <%end%>
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
-    
-    
-    
-    
-    
-    
-            <div class="row middle-row">
-                <div class='col-md-12'>
-                    <div class="row">
-    
-                        <%@instructors.each_with_index do |instructor, index| %>
-                            <div class="instructor col" align="left">
-                                <div class="row">
-                                    <div class='col-md-8'>
-                                        <div class="instructor_stat col-12">
-                                                <h5>
-                                                    Last Name:
-                                                    <%= instructor.l_name %>
-                                                </h5>
-                                            </div>
-    
-                                            <div class="instructor_stat col-12">
-                                                <h5>
-                                                    First Name:
-                                                    <%= instructor.f_name%>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    
-                                    <div class="col-md-4 instructor_pic" align="left">
-                                        instructor mug shot
-                                    </div>
-                                </div>
-                                <br>
-    
-                                <div class align="left">
-                                    Date of Birth:
-                                    <%=instructor.age%>
-    
-                                </div>
-                                <div class align="left">
-                                    Salary:
-                                    <%=instructor.salary%>
-                                </div>
-                                <div class align="left">
-                                    Education:
-                                    <%=instructor.education%>
-                                </div>
-                                <div class align="left">
-                                    Classes:
-    
-                                </div>
-                                <div class="instructor_controls">
-    
-                                    <%= link_to 'View', instructor_path(instructor)  %>
-                                        <%= link_to 'edit', edit_instructor_path(instructor)%>
-                                            <%= link_to 'Delete', instructor,  class: "deleteInstructor"%>
-                                </div>
-    
-                            </div>
-    
-    
-                            <% if index.even? %>
-    
-                                <div class="w-100"></div>
-    
-    
-                                <% end %>
-                                    <%end%>
-    
-    
-    
-                    </div>
-                </div>
+
             </div>
         </div>
-    </div>
+
+
     </div>

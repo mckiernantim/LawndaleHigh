@@ -12,18 +12,25 @@
   <body  >
   <div class='container' align ='center'>
       <nav class="nav nav-tabs|pills nav-stacked">
-          <a class="nav-link active" href="students">Students</a>
-          <a class="nav-link active" href="instructors">Instructors</a>
-          <a class="nav-link active" href="courses">Courses</a>
-          <a class="nav-link active" href="cohorts">Cohorts</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link disabled" href="#">Disabled link</a>
-      </nav>
+        <a class="nav-link active" <%= link_to('Students', students_path)%> 
+          <a class="nav-link active" <%= link_to('Instructors', instructors_path)%> 
+          <a class="nav-link active" <%= link_to('Courses', courses_path)%> 
+          <% if user_signed_in? %>
+          <li>
+          <a class="nav-link active"<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+          </li>
+        <% else %>
+          <li>
+           <a class="nav-link active"<%= link_to('Login', new_user_session_path)  %>  
+          </li>
+          <%end%>
+   
       
-    <%= yield %>
+      </nav>
+     <%= yield %>
+
+
+
+     
   </body> 
 </html>
-
-
-  
- 
