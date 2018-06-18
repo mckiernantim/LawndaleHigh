@@ -1,33 +1,50 @@
 <%= form_for [@instructor] do |f| %>
-<div>
-        <%= f.label :f_name %>
-        <%= f.text_field :f_name %>
-    </div>
+    <div class="middle-row">
+        <div class="row inner-row" align="center">
 
-    <div>
-        <%= f.label :l_name %>
-        <%= f.text_field :l_name%>
-    </div>
+            <div class="col-md-12">
+                <h5 class="card_headline">
+                    Create A New Instructor
+                </h5>
+                <h5 class="card_headline">
+                    <%= f.label :f_name %>
+                </h5>
+                <div>
+                    <%= f.text_field :f_name %>
+                </div>
 
-    <div>
-        <%= f.label :Date_of_birth %>
-        <%= f.date_field :age %>
-        
-    </div>
-    <div>
-        <%= f.label :salary %>
-        <%= f.number_field :salary%>
-        
-    </div>
-    <div>
-        <%= f.label :Education_credentials%>
-        <%= f.text_field :education %>
-        
-    </div>
-    <div>   
-        <%= f.submit %>
-    </div>
+                <h5 class="card_headline">
+                    <%= f.label :l_name %>
+                </h5>
+                <div>
+                    <%= f.text_field :l_name%>
+                </div>
 
-<% end %>
-   
-    
+                <h5 class="card_headline">
+
+                    <%= f.label :Date_of_birth %>
+                </h5>
+                <div>
+                    <%= f.date_field :age %>
+
+                </div>
+                <h5 class="card_headline">
+                    <%= f.label :salary %>
+                </h5>
+                <div>
+                    <%= f.number_field :salary%>
+
+                </div>
+                <h5 class="card_headline">
+                    <%= f.label :Education_credentials%>
+                </h5>
+                <div>
+                    <%= f.text_field :education %>
+
+                </div>
+                <h5 class="card_headline">
+                </h5>
+                    <%= f.submit %>
+            </div>
+
+            <% end %>
