@@ -19,7 +19,11 @@
 @import 'instructors';
 @import 'courses';
 @import url(https://fonts.googleapis.com/css?family=Graduate);
-body{
+html{
+    height: 100%
+}
+body{ 
+    height:100%;
     font-family: 'Graduate', cursive;
 }
 .container{
@@ -75,6 +79,19 @@ a:hover {
     border-color: #ecbe2a;
     border-radius: 3px;
     padding: 0;
-    background: linear-gradient(#277ca9, #1f8cbe)
+    background: linear-gradient(#277ca9, #1f8cbe);
+    }
+
+    .form {
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
     
+    .border-top{
+        border-top: 5px solid #ecbe2a !important;
+       
+    }
+
+    .view{
+        
+    }

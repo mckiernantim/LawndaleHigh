@@ -1,20 +1,18 @@
 <%= form_for [@instructor] do |f| %>
     <div class="middle-row">
-        <div class="row inner-row" align="center">
+        <div class="row inner-row form" align="center">
 
             <div class="col-md-12">
+               
                 <h5 class="card_headline">
-                    Create A New Instructor
-                </h5>
-                <h5 class="card_headline">
-                    <%= f.label :f_name %>
+                    <%= f.label :First_Name %>
                 </h5>
                 <div>
                     <%= f.text_field :f_name %>
                 </div>
 
                 <h5 class="card_headline">
-                    <%= f.label :l_name %>
+                    <%= f.label :Last_Name %>
                 </h5>
                 <div>
                     <%= f.text_field :l_name%>
@@ -45,6 +43,7 @@
                 <h5 class="card_headline">
                 </h5>
                     <%= f.submit %>
+                    <br>
             </div>
 
             <% end %>

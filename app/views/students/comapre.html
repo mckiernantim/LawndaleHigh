@@ -1,28 +1,63 @@
-<%= form_for @course do |f| %>
+<div class="container view">
+    <div class="row inner-row" align="center">
+        <div class="col-md-12  card_headline">
+            <h1>
+                <%=@student.f_name%>
+                    <%=@student.l_name%>
+            </h1>
+           <h3>
+                Birth Year:
+                <%=@student.age%>
+           </h3>
+           <h3>
+                Final Completed Grade Level:
+                <%=@student.highes_grade%>
+           </h3>
 
-    <div class="middle-row">
-        <div class="row inner-row" align="center">
+           <h3>
+                Added to LawndaleNet:
+                <%=@student.created_at%>
+           </h3>
+            <div>Current Classes:
+                <ul>
+                    <% @cohort.each do |thisClass| %>
 
-            <div class="col-md-12">
-                <h5 class="card_headline">
-                    Create A New Course
-                </h5>
-                <h5 class="card_headline">
+                        <li>
+                            <h4>
+                            Class Name:
+                            <%=thisClass.name%>
 
+                            </h4>
+                        </li>
+                        <li>
+                            <h4>
+                            Class ID:
+                            <%=thisClass.id%>
+                            </h4>
+                        </li>
+                        <li>
+                            <h4>
 
-                    <%= f.label :Course_name %>
-                        <%= f.text_field :name %>
-                </h5>
-                <h5 class="card_headline">
-                    <%= f.label :Credit_hours %>
-                        <%= f.number_field :hours%>
-                </h5>
+                            <% thisClass.instructors.where('cohort_id = ?', thisClass.id).each do |instructor| %>
+                                Instructor:
+                                <%=instructor.l_name%>
 
-                <div>
-                    <%= f.submit %>
-                </div>
+                                    <%end%>
+                                    </h4>
+                        </li>
+                    </ul>
+                        <br>
+                        </br>
+                    
+                    
 
+                        <%end%>
+                
             </div>
+
+            <%= link_to 'Home', students_path()  %>
+                <%= link_to 'edit', edit_student_path(@student)%>
+
         </div>
     </div>
-    <% end %>
+</div>

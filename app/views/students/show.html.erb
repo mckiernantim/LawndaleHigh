@@ -1,39 +1,75 @@
-<H1> <%=@student.f_name%> <%=@student.l_name%></h1>
-<div>
-    Birth Year: <%=@student.age%>
-</div> 
-<div>
-    Final Completed Grade Level:
-        <%=@student.highes_grade%>
-</div>
+<div class="container view">
+    <div class="row inner-row" align="center">
+        <div class="col-md-12  card_headline">
+        <br>
+            <h1>
+                <%=@student.f_name%>
+                    <%=@student.l_name%>
+            </h1>
+            <br>
+           <h3>
+                Birth Year:
+                <%=@student.age%>
+           </h3>
+           <br>
+           <h3>
+                Final Completed Grade Level:
+                <%=@student.highes_grade%>
+           </h3>
+           <br>
 
-<div>
-    Added to LawndaleNet: <%=@student.created_at%>
-</div>
-<div>Current Classes:
-<ul>
- <% @cohort.each do |thisClass| %>
-    
-        <li>
-            Class Name: <%=thisClass.name%>
-        </li>
-        <li>
-            Class ID: <%=thisClass.id%>
-        </li>
-         <li>
+           <h3>
+                Added to LawndaleNet:
+                <%=@student.created_at%>
+           </h3>
+           <br>
+            <div>
+            <H3>
+            Current Classes:
+            </H3>
             
-            <% thisClass.instructors.where('cohort_id = ?', thisClass.id).each do |instructor| %>
-            Instructor: <%=instructor.l_name%>
-           
-            <%end%>
-         </li>
-          <br>
-         </br>
-        
-        <%end%>
-    </ul>
+                <ul>
+                    <% @cohort.each do |thisClass| %>
+
+                        <li>
+                            <h4>
+                            Class Name:
+                            <%=thisClass.name%>
+
+                            </h4>
+                        </li>
+                        <li>
+                            <h4>
+                            Class ID:
+                            <%=thisClass.id%>
+                            </h4>
+                        </li>
+                        <li>
+                            <h4>
+
+                            <% thisClass.instructors.where('cohort_id = ?', thisClass.id).each do |instructor| %>
+                                Instructor:
+                                <%=instructor.l_name%>
+
+                                    <%end%>
+                                    </h4>
+                        </li>
+                    </ul>
+                        <br>
+                        </br>
+                    
+                    
+
+                        <%end%>
+                
+            </div>
+              <div class="border-top">
+                <h4>
+            <%= link_to 'Home', students_path()  %>
+                <%= link_to 'edit', edit_student_path(@student)%>
+                </h4>
+                </div>
+
+        </div>
+    </div>
 </div>
-
-<%= link_to 'Home', students_path()  %>
-<%= link_to 'edit', edit_student_path(@student)%>
-

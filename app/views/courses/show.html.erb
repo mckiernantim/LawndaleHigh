@@ -1,37 +1,69 @@
-<H1> <%=@course.name%> </h1>
-<div>
-    Credit Hours: <%= @course.hours%> 
-</div> 
-<div>
-    Current Cohorts: <% @course.cohorts.each do |cohort|%>
-            <div>
-                <%=cohort.name%>
-            </div>
-            <%end%>
-            
-</div>
-<div>
-           
-    <div>
-    Current Instructors:  <% @course.cohorts.each do |cohort|%>
-    <%cohort.instructors.each do |instructor|%>
-        <div>
-                <%=instructor.l_name%>
-         </div>
-            <%end%>
-            <%end%>
-</div>
-<div>
-    Current Students: <% @course.cohorts.each do |cohort|%> 
-    <%cohort.students.each do |student|%>
-    <div>
-        <%=student.l_name%> , <%=student.f_name%>
-        <%end%>
-        <%end%>
+<div class="container view">
+    <div class="row inner-row" align="center">
+        <div class="col-md-12  card_headline">
+            <h5 class="card_headline">
+                <h1 class="card_headline">
+                    <%=@course.name%>
+                </h1>
+                 <br>
+                <h3 class="card_headline">
+                    Credit Hours:
+                    <%= @course.hours%>
+                </h3>
+                 <br>
+                <h3>
+                    Current Cohorts:
+                    <% @course.cohorts.each do |cohort|%>
+                        <div class="card_headline">
+                            <%=cohort.name%>
+                        </div>
+                        <%end%>
+
+                </h3>
+                 <br>
+                <div>
+
+                    <div>
+                        <h3 class="card_headline">
+                            Current Instructors:
+                        </h3>
+                         <br>
+                        <% @course.cohorts.each do |cohort|%>
+
+                            <%cohort.instructors.each do |instructor|%>
+                                <div>
+                                 
+                                    <%=instructor.l_name%>
+                                </div>
+                                <%end%>
+                                    <%end%>
+                    </div>
+                    <div>
+                        <h3 class=":card_headline">
+                            Current Students:
+                        </h3>
+                         <br>
+                        <% @course.cohorts.each do |cohort|%>
+                        
+                            <%cohort.students.each do |student|%>
+                                <div>
+                                    <%=student.l_name%> ,
+                                        <%=student.f_name%>
+                                            <%end%>
+                                                <%end%>
+                                </div>
+                                 <br>
+
+                    </div>
+                    <div class="border-top">
+
+                        <h4>
+                            <%= link_to 'Home', courses_path()  %>
+                                <%= link_to 'Edit', edit_course_path(@course)%>
+                        </h4>
+                    </div>
+
+                </div>
+        </div>
     </div>
-
 </div>
-
-<%= link_to 'Home', courses_path()  %>
-<%= link_to 'Edit', edit_course_path(@course)%>
-
