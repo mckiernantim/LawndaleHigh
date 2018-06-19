@@ -11,25 +11,35 @@
                 <div>
                     <%= f.text_field :f_name %>
                 </div>
+                <br>
 
                 <h5 class="card_headline">
                     <%= f.label :last_Name %>
                 </h5>
+                <br>
                 <div>
                     <%= f.text_field :l_name %>
                 </div>
                 <h5 class="card_headline">
                     <%= f.label :Date_of_birth %>
                 </h5>
+                <br>
                 <div>
                     <%= f.date_field :age %>
                 </div>
+                <br>
                 <h5 class="card_headline">
                     <%= f.label :Last_grade_completed%>
                 </h5>
+                <br>
                 <div>
                     <%= f.number_field :highes_grade%>
                 </div>
+                <br>
+                <div>
+                 <%= f.file_field :pic %>
+                 </div>
+                 
                 <h5 class="card_headline">
                     Courses:
                     <%=f.label :current_cohorts%>

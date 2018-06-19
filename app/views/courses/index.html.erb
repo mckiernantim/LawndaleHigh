@@ -8,7 +8,7 @@
                             <div class='row inner-inner-row'>
                                 <div class=" row inner-inner-inner-row">
                                     <div class='col-md-12 page-headline'>
-                                        <h2>Welcome to your courses panel. </h2>
+                                        <h2>Welcome to your <span class = "highlight">Courses</span> panel. </h2>
                                         <h3>LawndaleWeb currently has the following courses available to students</h3>
                                     </div>
                                     </div>
@@ -39,7 +39,7 @@
                                 <div class="course col">
                                     <h4 class = 'card_headline'>
                                         Course Name:
-                                        <%= course.name %>
+                                      <span class= "highlight">  <%= course.name %></span>
                                     </h4>
                                     <div>
                                         
@@ -64,7 +64,8 @@
                                                 </div>
                                                 <div>
                                                     Instructor
-                                                    <%= cohort.instructors.first && cohort.instructors.first.l_name %>
+                                                 <span class= "highlight">   <%= cohort.instructors.first && cohort.instructors.first.l_name %>,
+                                                    <%= cohort.instructors.first && cohort.instructors.first.f_name %></span>
                                                 </div>
                                                 </ul>
                                                 <% end %>

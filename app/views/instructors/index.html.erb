@@ -7,7 +7,7 @@
                             <div class='row inner-inner-row'>
                                 <div class=" row inner-inner-inner-row">
                                     <div class='col-md-12 page-headline' align="center">
-                                        <h2> Welcome to the Instructors panel. </h2>
+                                        <h2> Welcome to the <span class= "highlight">Instructors</span> panel. </h2>
                                         <h3> LawndaleWeb has the following Instructors currently on staff</h3>
                                     </div>
                                 </div>
@@ -61,27 +61,36 @@
                                             </div>
                                         </div>
                                     
-                                    <div class="col-md-4 instructor_pic" align="left">
-                                        instructor mug shot
+                                      <div class = 'col-md-4 instructor_pic' align ="right" style="background-image: url(<%= url_for(instructor.pic) if instructor.pic.attached? %>)" >
+                                        
                                     </div>
                                 </div>
                                 <br>
     
                                 <div class align="left">
+                                <h5>
                                     Date of Birth:
                                     <%=instructor.age%>
+                                    </h5>
     
                                 </div>
                                 <div class align="left">
+                                 <h5>
                                     Salary:
+
                                     <%=instructor.salary%>
+                                     </h5>
                                 </div>
                                 <div class align="left">
+                                 <h5>
                                     Education:
                                     <%=instructor.education%>
+                                    </h5>
                                 </div>
                                 <div class align="left">
-                                    Classes:
+                                <h5>
+                                    Classes: COMING SOON!
+                                    </h5>
     
                                 </div>
                                 <div class="instructor_controls">

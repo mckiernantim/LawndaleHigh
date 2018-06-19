@@ -1,53 +1,83 @@
-<div class="row sign-in card_headline" align="left">
-        <div class="col-md-7">
-            <div class='row'>
-    
-    
-                <h1>Welcome to Lawndale Web</h1>
-                <h3> Lawdnadale High School's Official Web Portal</h3>
-            </div>
-    
-    
-    
-    
-            <div class="row">
-                <h3> Sign In </h3>
-                </div>
-                <div class="row">
-    
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="field">
-                        <%= f.label :email %>
-                            <br />
-                            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-                    </div>
-    
-                    <div class="field">
-                        <%= f.label :password %>
-                            <br />
-                            <%= f.password_field :password, autocomplete: "off" %>
-                    </div>
-    
-                    <% if devise_mapping.rememberable? -%>
-                        <div class="field">
-                            <%= f.check_box :remember_me %>
-                                <%= f.label :remember_me %>
-                        </div>
-                        <% end -%>
-                        </div>
-    
-                            <div class="actions">
-                                <%= f.submit "Log in" %>
-                            </div>
-    
-                            <% end %>
-            
-      
-          <div class ="row">
-                <%= render "devise/shared/links"  %>
-            </div>
-         </div>
-         <div class="col-md-5 login_image">
-                    </div>
-    
+<div class="container view card_headline">
+
+    <div class="row inner-row" align="center">
+
+        <div class="col-md-8 card_headline">
+            <br>
+            <h1>
+                <%=@student.f_name%>
+                    <%=@student.l_name%>
+            </h1>
         </div>
+        <div class='col-md-4 student_pic' align="left" style="background-image: url(<%= url_for(@student.pic) if @student.pic.attached? %>)">
+        </div>
+    </div>
+    <br>
+    <h3>
+        Birth Year:
+        <%=@student.age%>
+    </h3>
+    <br>
+    <h3>
+        Final Completed Grade Level:
+        <%=@student.highes_grade%>
+    </h3>
+    <br>
+
+    <h3>
+        Added to LawndaleNet:
+        <%=@student.created_at%>
+    </h3>
+    <br>
+    <div>
+        <H3>
+            Current Classes:
+        </H3>
+
+        <ul>
+            <% @cohort.each do |thisClass| %>
+
+                <li>
+                    <h4>
+                        Class Name:
+                        <%=thisClass.name%>
+
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+                        Class ID:
+                        <%=thisClass.id%>
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+
+                        <% thisClass.instructors.where('cohort_id = ?', thisClass.id).each do |instructor| %>
+                            Instructor:
+                            <%=instructor.l_name%>
+
+                                <%end%>
+                    </h4>
+                </li>
+        </ul>
+        </div>
+    </div>
+    <br>
+    </br>
+
+
+
+    <%end%>
+
+</div>
+<div class="border-top">
+    <h4>
+        <%= link_to 'Home', students_path()  %>
+            <%= link_to 'edit', edit_student_path(@student)%>
+    </h4>
+</div>
+
+</div>
+</div>
+</div>

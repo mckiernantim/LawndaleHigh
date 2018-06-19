@@ -53,6 +53,6 @@ class StudentsController < ApplicationController
 		# will return something that looks like this
 		# {name: '...', :description: '...'}
 		
-		params.require(:student).permit(:f_name, :l_name, :age, :highes_grade)
+		params.require(:student).permit(:f_name, :l_name, :age, :highes_grade, :pic)
 	end
 end
