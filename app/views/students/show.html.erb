@@ -1,11 +1,17 @@
-<div class="container view">
+<div class="container view card_headline">
+ 
     <div class="row inner-row" align="center">
-        <div class="col-md-12  card_headline">
+   
+        <div class="col-md-8 card_headline view">
         <br>
             <h1>
                 <%=@student.f_name%>
                     <%=@student.l_name%>
             </h1>
+            </div>
+            <div class ='col-md-4 student_pic view' align ="left" style="background-image: url(<%= url_for(@student.pic) if @student.pic.attached? %>)">
+    </div>
+    </div>
             <br>
            <h3>
                 Birth Year:
@@ -55,6 +61,7 @@
                                     </h4>
                         </li>
                     </ul>
+                    </div>
                         <br>
                         </br>
                     

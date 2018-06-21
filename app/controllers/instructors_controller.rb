@@ -3,6 +3,7 @@ class InstructorsController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: [:destroy]
     def index
 		@instructors = Instructor.all.order(:created_at)
+		
 	end
 
 	def show
@@ -46,7 +47,7 @@ class InstructorsController < ApplicationController
 		# will return something that looks like this
 		# {name: '...', :description: '...'}
 		
-		params.require(:instructor).permit(:f_name, :l_name, :salary, :age, :education)
+		params.require(:instructor).permit(:f_name, :l_name, :salary, :age, :education, :pic)
 	end
 	
 end

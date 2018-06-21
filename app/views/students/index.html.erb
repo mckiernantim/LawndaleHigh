@@ -8,7 +8,7 @@
                           <div class='row inner-inner-row'>
                             <div class=" row inner-inner-inner-row">
                               <div class='col-md-12 page-headline' align = "center">
-                                <h2> Welcome to the Students panel. </h2>
+                                <h2> Welcome to the <span class= "highlight">Students</span> panel. </h2>
                                 <h3> LawndaleWeb has the following Students enrolled </h3>
                               </div>
                             </div>
@@ -53,8 +53,8 @@
                         </div>
                         </div>
                         
-                        <div class = 'col-md-4 student_pic' align ="right" >
-                        STUDENT PIC HERE
+                        <div class = 'col-md-4 student_pic' align ="right" style="background-image: url(<%= url_for(student.pic) if student.pic.attached? %>)" >
+
                         </div>
                         </div>
       
@@ -67,9 +67,10 @@
                           Current Classes:
                           <ul>
                             <% student.cohorts.each do |cohort|%>
-                              <li>
-                                Course Name:
-                                <%= cohort.name %>
+                              <li><h4>
+                                <span class= "highlight">Course Name:</span>
+                              <span class= "highlight">  <%= cohort.name %></span>
+                              </h4>
                               </li>
                               <li>
                                 Cohort ID:
