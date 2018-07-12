@@ -88,14 +88,6 @@ background: linear-gradient(#277ca9, #1f8cbe)
     padding: 0;
 
 }
-.instructor_pic{
-
-    background: white;
-    border-left: 2px solid;
-    border-bottom:  2px solid;
-    border-color: #ecbe2a
-   
-}
 .banner-image{
     background-image: image-url('Teachers.jpg');
     height: auto; 
@@ -106,11 +98,16 @@ background: linear-gradient(#277ca9, #1f8cbe)
 .instructor_pic{
     border: solid 5px  #ecbe2a;
     height: 220px; 
-    width: auto; 
+    width: 100%; 
     max-width: 375px;
     max-width: height 220px;
 
     background-size:cover;
+    background: white;
+    border-left: 2px solid;
+    border-bottom:  2px solid;
+    border-color: #ecbe2a
+   
 
 
 
