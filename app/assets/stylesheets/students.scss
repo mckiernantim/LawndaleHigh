@@ -76,21 +76,18 @@ background: linear-gradient(#277ca9, #1f8cbe)
     background: white;
     border-left: 2px solid;
     border-bottom:  2px solid;
-    border-color: #ecbe2a
+    border-color: #ecbe2a;
+    height: 200px; 
+    width: 100%; 
+    background-size:cover;
    
 }
 
 .students-image{
     background-image: image-url('Cast.jpg');
     height: auto; 
-    width: auto; 
+    width: 100%; 
     background-size:cover;
 
 }
-.student_pic{
-    height: 200px; 
-    width: auto; 
-    background-size:cover;
 
-
-}
