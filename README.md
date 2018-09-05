@@ -1,4 +1,5 @@
 # Ms-Li's Panel
+### Or How I Built My First Admin Panel in Rails
 
 ## Objective
 Implementation of a fully functional high school administration platform built in Rails to track student, staff, and class listings.
