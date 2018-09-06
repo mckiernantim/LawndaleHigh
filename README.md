@@ -27,12 +27,14 @@ To display proficency in Ruby on Rails, AJAX calls in Rails, relational database
 ## The Challenge
 
 The implementation of an administrative panel is a very common request of a software engineer.  An admin panel, simply, is a site designed to allow a user to do simple administrative tasks.  In our case - a school.  The panel should have the following features
+![alt_text](https://github.com/mckiernantim/LawndaleHigh/blob/master/app/assets/images/teachers.png)
 
 * have a way to create, display, edit and remove students and
  
 * have a way to create, display, edit and remove instructors
  
 * have a way to create, display, edit and remove courses
+![alt_text](https://github.com/mckiernantim/LawndaleHigh/blob/master/app/assets/images/courses.png)
  
 * have a way to create, display, edit and remove cohorts
  
