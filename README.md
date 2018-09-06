@@ -1,6 +1,7 @@
-![alt_text](https://github.com/mckiernantim/LawndaleHigh/blob/master/app/assets/images/main_page.png)
 # Ms-Li's Panel
 ### Or How I Built My First Admin Panel in Rails
+![alt_text](https://github.com/mckiernantim/LawndaleHigh/blob/master/app/assets/images/main_page.png)
+
 
 ## Objective
 Implementation of a fully functional high school administration platform built in Rails to track student, staff, and class listings.
