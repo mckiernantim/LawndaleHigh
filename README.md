@@ -1,3 +1,4 @@
+![alt_text](https://github.com/mckiernantim/LawndaleHigh/tree/master/app/assets/images/main_page.png)
 # Ms-Li's Panel
 ### Or How I Built My First Admin Panel in Rails
 
@@ -27,35 +28,17 @@ To display proficency in Ruby on Rails, AJAX calls in Rails, relational database
 The implementation of an administrative panel is a very common request of a software engineer.  An admin panel, simply, is a site designed to allow a user to do simple administrative tasks.  In our case - a school.  The panel should have the following features
 
 * have a way to create, display, edit and remove students and
-  * first name
-  * last name
-  * age - must be less than 150
-  * highest completed education - should be limited to HS, College, Masters, PHD
-  * students have the following information associated with them
-  * deletion should be enabled via an ajax call
+ 
 * have a way to create, display, edit and remove instructors
-  * first name
-  * last name
-  * age - must be less than 150
-  * salary - cannot be less than 0
-  * highest completed education - should be limited to HS, College, Masters, PHD
-  * instructors have the following information associated with them
-  * deletion should be enabled via an ajax call
+ 
 * have a way to create, display, edit and remove courses
-  * name
-  * total in class hours - cannot be less than 0
-  * courses have the following information associated with them
-  * deletion should be enabled via an ajax call
+ 
 * have a way to create, display, edit and remove cohorts
-  * name
-  * start date
-  * end date
-  * instructor teaching the cohort
-  * students taking in the cohort
-  * cohorts have the following information associated with them
-  * deletion should be enabled via an ajax call
+ 
 * have a way to add students to courses
+
 * have a way to add instructors to courses
+
 * be deployed to Heroku
 
 
