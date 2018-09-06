@@ -1,4 +1,4 @@
-![alt_text](https://github.com/mckiernantim/LawndaleHigh/blob/master/app/assets/images/main_page)
+![alt_text](https://github.com/mckiernantim/LawndaleHigh/blob/master/app/assets/images/main_page.png)
 # Ms-Li's Panel
 ### Or How I Built My First Admin Panel in Rails
 
